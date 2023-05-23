@@ -34,10 +34,25 @@
           <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
           </li>
         </ul>
-        <button type="button" class="rounded-pill btn-rounded">
-          contact@aylstnode.com
-          <span>
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+        <button type="button" class="rounded-pill btn-rounded" onclick="copyToClipboard('contact@aylstnode.com')">
+  contact@aylstnode.com
+  <span>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
+  </span>
+</button>
+
+<script>
+  function copyToClipboard(text) {
+    const tempInput = document.createElement('input');
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    alert('Email copied to clipboard!');
+  }
+</script>
+
           </span>
         </button>
       </div>
