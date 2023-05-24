@@ -34,7 +34,8 @@
           <li class="nav-item"><a class="nav-link" href="#contact">contact</a>
           </li>
         </ul>
-        <button type="button" onclick="copyToClipboard('contact@aylstnode.com')">
+          
+<button type="button" class="rounded-pill btn-rounded" onclick="copyEmail()">
   contact@aylstnode.com
   <span>
     <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -42,16 +43,29 @@
 </button>
 
 <script>
-  function copyToClipboard(text) {
-    const tempInput = document.createElement('input');
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    alert('Email copied to clipboard!');
-  }
+function copyEmail() {
+  var email = "contact@aylstnode.com";
+
+  // Create a temporary input element
+  var tempInput = document.createElement("input");
+  tempInput.setAttribute("value", email);
+  document.body.appendChild(tempInput);
+
+  // Select the input field's content
+  tempInput.select();
+  tempInput.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the content to clipboard
+  document.execCommand("copy");
+
+  // Remove the temporary input element
+  document.body.removeChild(tempInput);
+
+  // Optionally, you can provide visual feedback to the user
+  alert("Email copied to clipboard!");
+}
 </script>
+
 
           <span>
             <i class="fa fa-envelope" aria-hidden="true"></i>
